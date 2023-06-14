@@ -1,7 +1,7 @@
-Запуск сервера:
-# project2
+# Запуск сервера:
+## project2
 
-## Project setup
+### Project setup
 ```
 npm install
 ```
