@@ -1,5 +1,4 @@
-
-name: Запуск сервера:
+Запуск сервера:
 # project2
 
 ## Project setup
