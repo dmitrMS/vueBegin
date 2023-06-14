@@ -57,6 +57,25 @@ export default {
       ]
     }
   },
+  methods: {
+    addTask() {
+      if (this.newTask.length < 1) return
+      this.tasks.push({
+        id: this.tasks.length + 1,
+        name: this.newTask,
+        finished: false
+      });
+      this.newTask = ''
+    },
+    removeTask(taskID) {
+      this.tasks = this.tasks.filter(task => {
+          return task.id !== taskID
+      });
+    },
+    finishTask(task) {
+      task.finished = !task.finished
+    }
+  },
   computed: {
     allTasks() {
         return this.tasks.length
@@ -64,20 +83,6 @@ export default {
     latest() {
         return [...this.tasks].reverse()
     }
-  },
-  methods: {
-    addTask() {
-      if (this.newTask.length < 1) return
-
-      this.tasks.push({
-        id: this.tasks.length + 1,
-        name: this.newTask,
-        finished: false
-      });
-
-      this.newTask = ''
-    }
-    
   }
 }
 </script>
